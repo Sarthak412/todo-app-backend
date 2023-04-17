@@ -62,6 +62,11 @@ public class todoServiceImpl implements TodoServices{
 
         todoEntity todo_entity = todoRepo.findById(id).get();
 
-        return null;
+        todo_entity.setTaskDescription(todo.getTaskDescription());
+        todo_entity.setTaskType(todo.getTaskType());
+
+        todoRepo.save(todo_entity);
+
+        return todo;
     }
 }

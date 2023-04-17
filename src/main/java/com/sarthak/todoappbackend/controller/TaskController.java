@@ -43,7 +43,6 @@ public class TaskController {
         return ResponseEntity.ok(response);
     }
 
-
     @GetMapping("/todos/{id}")
     public ResponseEntity<Todo> getTasksById(@PathVariable Long id){
         Todo todo = null;
@@ -56,5 +55,4 @@ public class TaskController {
         todo = todoServices.editTask(id, todo);
         return ResponseEntity.ok(todo);
     }
-
 }
